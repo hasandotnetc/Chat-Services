@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>chat_app</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h1 class="" style="">
+                <strong>Chat App</strong>
+            </h1>
+        </div>
+        <div class="mainchat">
+            <button id="btnshow"><hr><hr><hr></button>
+            <div id="sidebar" class="">
+
+                <div id="rooms">
+
+                    <p>Chatting Groups <span id="create-room">+</span></p>
+                    <ul id="roomlist"></ul>
+                </div>
+                <div id="users">
+                    <p>Active Now</p>
+                    <ul id="userlist"></ul>
+                </div>
+            </div>
+
+            <div id="char-area" class="">
+                <div class="">
+                    <div id="chat-display" class="">
+                        <div id="msg"></div>
+                        <div id="images"></div>
+                    </div>
+                    <div class="errMain">
+                        <span id="typingIndicator"></span>
+                        <span id="chaterror" style="height: 20px; display: block; text-align: center; color: red; background: #f0f4ff; "></span>
+                    </div>
+                </div>
+
+                <div class="" style="text-align: center;background: #f0f4ff;">
+                    <input style="width: 45%;"
+                           class=""
+                           type="text"
+                           id="message"
+                           placeholder="Type your message" />
+                    <button class="" id="send" style="cursor: pointer; border-radius: 10px;">Send</button>
+                    <label id="btnImageFile" style='border-radius: 10px;'>
+                        <img src="img/cam.png" style="width: 30px;margin-bottom: -7px;cursor: pointer;">
+                        <input type="file" style='display:none' />
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#btnshow").click(function(){
+        $("#sidebar").slideToggle();
+      });
+    });
+    </script>
+</body>
+</html>
